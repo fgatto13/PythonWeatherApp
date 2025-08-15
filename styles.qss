@@ -1,0 +1,142 @@
+/* Common styles — Apple vibe */
+QLabel, QPushButton {
+    font-family: "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Default label color (day) scoped to the window) */
+QWidget#mainWindow QLabel { color: #1c1c1e; }
+
+/* Night override — keep this AFTER any other QLabel rules */
+QWidget#mainWindow[time="night"] QLabel { color: #f5f5f7; }
+QLabel#cityLabel {
+    font-size: 40px;
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: 0.3px;
+}
+
+QLineEdit#cityInput {
+    font-size: 28px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.15);
+    background: rgba(255,255,255,0.9);
+    selection-background-color: #007aff;
+    selection-color: white;
+}
+
+/* Modern Apple-like button */
+QPushButton#getWeatherButton {
+    font-size: 24px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 12px;
+    background: qlineargradient(
+        x1:0, y1:0, x2:0, y2:1,
+        stop:0 #42a1ff,
+        stop:1 #007aff
+    );
+    color: white;
+    border: none;
+}
+QPushButton#getWeatherButton:hover {
+    background: qlineargradient(
+        x1:0, y1:0, x2:0, y2:1,
+        stop:0 #53abff,
+        stop:1 #198bff
+    );
+}
+QPushButton#getWeatherButton:pressed {
+    background: qlineargradient(
+        x1:0, y1:0, x2:0, y2:1,
+        stop:0 #007aff,
+        stop:1 #006ae6
+    );
+}
+QLabel#temperatureLabel {
+    font-size: 70px;
+    font-weight: 600;
+}
+QLabel#weatherEmojiLabel {
+    font-size: 90px;
+    font-family: 'Segoe UI Emoji', 'Apple Color Emoji';
+}
+QLabel#descriptionLabel {
+                font-size: 28px;
+                opacity: 0.85;
+            }
+
+            /* ===== Weather-specific backgrounds with day/night ===== */
+
+            /* Thunderstorm */
+            QWidget#mainWindow[weather="Thunderstorm"][time="day"] {
+                background: qlineargradient(x1:0,y1:0,x2:0,y2:1,
+                    stop:0 #5a5a5e, stop:1 #262629);
+            }
+            QWidget#mainWindow[weather="Thunderstorm"][time="night"] {
+                background: qlineargradient(x1:0,y1:0,x2:0,y2:1,
+                    stop:0 #3e3e42, stop:1 #1b1b1f);
+            }
+
+            /* Drizzle */
+            QWidget#mainWindow[weather="Drizzle"][time="day"] {
+                background: qlineargradient(x1:0,y1:0,x2:0,y2:1,
+                    stop:0 #b5d0f5, stop:1 #6ea5ef);
+            }
+            QWidget#mainWindow[weather="Drizzle"][time="night"] {
+                background: qlineargradient(x1:0,y1:0,x2:0,y2:1,
+                    stop:0 #7d8fae, stop:1 #50678b);
+            }
+
+            /* Rain */
+            QWidget#mainWindow[weather="Rain"][time="day"] {
+                background: qlineargradient(x1:0,y1:0,x2:0,y2:1,
+                    stop:0 #6f8cb6, stop:0.5 #3d6ea5, stop:1 #4f5e82);
+            }
+            QWidget#mainWindow[weather="Rain"][time="night"] {
+                background: qlineargradient(x1:0,y1:0,x2:0,y2:1,
+                    stop:0 #4a5b78, stop:0.5 #2e456d, stop:1 #39465f);
+            }
+
+            /* Snow */
+            QWidget#mainWindow[weather="Snow"][time="day"] {
+                background: qlineargradient(x1:0,y1:0,x2:0,y2:1,
+                    stop:0 #f7faff, stop:1 #d8e4f5);
+            }
+            QWidget#mainWindow[weather="Snow"][time="night"] {
+                background: qlineargradient(x1:0,y1:0,x2:0,y2:1,
+                    stop:0 #cfd8e5, stop:1 #a5b3c4);
+            }
+
+            /* Atmosphere */
+            QWidget#mainWindow[weather="Atmosphere"][time="day"] {
+                background: qlineargradient(x1:0,y1:0,x2:0,y2:1,
+                    stop:0 #c4ccd4, stop:1 #8e9ba8);
+            }
+            QWidget#mainWindow[weather="Atmosphere"][time="night"] {
+                background: qlineargradient(x1:0,y1:0,x2:0,y2:1,
+                    stop:0 #8d96a0, stop:1 #5d6670);
+            }
+
+            /* Clear */
+            QWidget#mainWindow[weather="Clear"][time="day"] {
+                background: qlineargradient(x1:0,y1:0,x2:0,y2:1,
+                    stop:0 #eaf6ff, stop:1 #aad4ff);
+            }
+            QWidget#mainWindow[weather="Clear"][time="night"] {
+                background: qlineargradient(x1:0,y1:0,x2:0,y2:1,
+                    stop:0 #1b2735, stop:1 #090a0f);
+            }
+
+            /* Clouds */
+            QWidget#mainWindow[weather="Clouds"][time="day"] {
+                background: qlineargradient(x1:0,y1:0,x2:0,y2:1,
+                    stop:0 #dee2e6, stop:1 #b5bec9);
+            }
+QWidget#mainWindow[weather="Clouds"][time="night"] {
+    background: qlineargradient(
+        x1:0, y1:0,
+        x2:0, sy2:1,
+        stop:0 #7a828a,
+        stop:1 #4f5560);
+}
