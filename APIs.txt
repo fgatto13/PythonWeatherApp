@@ -1,4 +1,0 @@
-Pexels:
-P5w2X4QOR1L87cd0tzOIoxTqkE4vY3sbMQJsUwUqJtM5wuk03hlW74hp
-OpenWeatherAPI:
-a5cce5fb01f2c0b348360574110a5096
